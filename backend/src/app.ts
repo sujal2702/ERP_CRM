@@ -3,6 +3,8 @@ import cors from 'cors';
 
 import authRoutes from './routes/auth.routes';
 import customerRoutes from './routes/customer.routes';
+import productRoutes from './routes/product.routes';
+import inventoryRoutes from './routes/inventory.routes';
 
 const app: Express = express();
 
@@ -18,6 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/customers', customerRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/inventory', inventoryRoutes);
 
 // Health Check Endpoint
 app.get('/api/health', (_req: Request, res: Response) => {

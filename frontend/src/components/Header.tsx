@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Package, Users, LayoutDashboard, LogOut } from 'lucide-react';
+import { Package, Users, LayoutDashboard, LogOut, Boxes } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const { user, logout } = useAuth();
@@ -60,6 +60,30 @@ export const Header: React.FC = () => {
             >
               <Users className="w-4 h-4" />
               <span>Customer CRM</span>
+            </Link>
+
+            <Link
+              to="/products"
+              className={`flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition ${
+                isActive('/products')
+                  ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+              }`}
+            >
+              <Package className="w-4 h-4" />
+              <span>Products</span>
+            </Link>
+
+            <Link
+              to="/inventory"
+              className={`flex items-center space-x-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition ${
+                isActive('/inventory')
+                  ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
+              }`}
+            >
+              <Boxes className="w-4 h-4" />
+              <span>Inventory</span>
             </Link>
           </nav>
         </div>
