@@ -1,0 +1,2 @@
+// Frontend Types Placeholder
+export {};
