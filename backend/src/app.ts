@@ -1,6 +1,8 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 
+import authRoutes from './routes/auth.routes';
+
 const app: Express = express();
 
 // Middlewares
@@ -11,6 +13,9 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 // Health Check Endpoint
 app.get('/api/health', (_req: Request, res: Response) => {
