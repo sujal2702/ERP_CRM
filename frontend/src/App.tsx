@@ -4,6 +4,9 @@ import { AuthProvider } from './context/AuthContext';
 import { ProtectedRoute } from './routes/ProtectedRoute';
 import { LoginPage } from './pages/LoginPage';
 import { DashboardPage } from './pages/DashboardPage';
+import { CustomerListPage } from './pages/CustomerListPage';
+import { CustomerFormPage } from './pages/CustomerFormPage';
+import { CustomerDetailPage } from './pages/CustomerDetailPage';
 
 export default function App() {
   return (
@@ -16,6 +19,10 @@ export default function App() {
           {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/customers" element={<CustomerListPage />} />
+            <Route path="/customers/new" element={<CustomerFormPage />} />
+            <Route path="/customers/:id" element={<CustomerDetailPage />} />
+            <Route path="/customers/:id/edit" element={<CustomerFormPage />} />
           </Route>
 
           {/* Fallback Route */}
