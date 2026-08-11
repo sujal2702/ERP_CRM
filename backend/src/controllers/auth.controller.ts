@@ -29,6 +29,12 @@ export class AuthController {
           message: error.message,
         });
       }
+      if (error.code === 'P1001' || (error.message && error.message.includes("Can't reach database server"))) {
+        return res.status(503).json({
+          success: false,
+          message: 'Database connection failed: Cannot reach PostgreSQL server. Please check your DATABASE_URL in backend/.env.',
+        });
+      }
       next(error);
     }
   }
