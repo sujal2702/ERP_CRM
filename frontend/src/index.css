@@ -63,6 +63,32 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #020617;
-  color: #f8fafc;
+  background-color: oklch(0.145 0 0);
+  color: oklch(0.985 0 0);
+}
+
+/* Violet accent theme overrides for buttons and highlights */
+.bg-blue-600 {
+  background-color: oklch(0.491 0.27 292.581) !important;
+}
+.hover\:bg-blue-500:hover {
+  background-color: oklch(0.541 0.281 293.009) !important;
+}
+.bg-blue-600\/20 {
+  background-color: oklch(0.491 0.27 292.581 / 20%) !important;
+}
+.border-blue-500\/30 {
+  border-color: oklch(0.491 0.27 292.581 / 30%) !important;
+}
+.text-blue-400 {
+  color: oklch(0.708 0.2 293) !important;
+}
+.text-blue-300 {
+  color: oklch(0.811 0.111 293.571) !important;
+}
+.focus\:border-blue-500:focus {
+  border-color: oklch(0.491 0.27 292.581) !important;
+}
+.shadow-blue-600\/20 {
+  box-shadow: 0 10px 25px -5px oklch(0.491 0.27 292.581 / 30%) !important;
 }

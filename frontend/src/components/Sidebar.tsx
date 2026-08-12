@@ -68,12 +68,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* Top Brand Logo */}
         <div className="p-6 border-b border-slate-800 flex items-center justify-between">
           <Link to="/dashboard" onClick={onClose} className="flex items-center space-x-3">
-            <div className="p-2 bg-blue-600/20 text-blue-400 rounded-xl border border-blue-500/30">
+            <div className="p-2 bg-violet-600/20 text-violet-400 rounded-xl border border-violet-500/30">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
               <h2 className="font-bold text-base text-white tracking-tight">Mini ERP Portal</h2>
-              <p className="text-[10px] text-slate-400">Operations & CRM</p>
+              <p className="text-[10px] text-violet-400">Operations & CRM</p>
             </div>
           </Link>
 
@@ -95,11 +95,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
                 onClick={onClose}
                 className={`flex items-center space-x-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition ${
                   active
-                    ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30 shadow-lg shadow-blue-600/10'
+                    ? 'bg-violet-600/20 text-violet-300 border border-violet-500/40 shadow-lg shadow-violet-600/10'
                     : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${active ? 'text-blue-400' : 'text-slate-500'}`} />
+                <Icon className={`w-4 h-4 ${active ? 'text-violet-400' : 'text-slate-500'}`} />
                 <span>{item.label}</span>
               </Link>
             );
@@ -109,7 +109,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* Bottom User Info & Logout */}
         <div className="p-4 border-t border-slate-800 bg-slate-950/40 space-y-3">
           <div className="flex items-center space-x-3 px-2">
-            <div className="w-9 h-9 rounded-xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center font-bold text-xs">
+            <div className="w-9 h-9 rounded-xl bg-violet-600/20 border border-violet-500/40 text-violet-300 flex items-center justify-center font-bold text-xs">
               {user?.name?.charAt(0).toUpperCase() || 'U'}
             </div>
             <div className="flex-1 min-w-0">
