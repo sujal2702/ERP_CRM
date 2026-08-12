@@ -12,6 +12,7 @@ const app: Express = express();
 // Middlewares
 const allowedOrigins = [
   process.env.CLIENT_URL,
+  'https://erp-crm-chi.vercel.app',
   'http://localhost:5173',
   'http://localhost:3000',
 ].filter(Boolean) as string[];
