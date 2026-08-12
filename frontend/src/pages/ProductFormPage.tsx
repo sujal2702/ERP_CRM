@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { productService } from '../services/product.service';
-import { Header } from '../components/Header';
+import { AdminLayout } from '../components/AdminLayout';
 import {
   Package,
   ArrowLeft,
@@ -99,10 +99,8 @@ export const ProductFormPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
-      <Header />
-
-      <main className="flex-1 max-w-3xl w-full mx-auto p-6 space-y-6">
+    <AdminLayout>
+      <main className="max-w-3xl w-full mx-auto p-6 space-y-6">
         {/* Header Bar */}
         <div className="flex items-center justify-between bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
           <div className="flex items-center space-x-3">
@@ -290,6 +288,6 @@ export const ProductFormPage: React.FC = () => {
           </div>
         </form>
       </main>
-    </div>
+    </AdminLayout>
   );
 };

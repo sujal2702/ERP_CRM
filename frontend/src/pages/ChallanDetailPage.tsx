@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { challanService } from '../services/challan.service';
 import { Challan, InsufficientStockDetail } from '../types/challan';
 import { useAuth } from '../context/AuthContext';
-import { Header } from '../components/Header';
+import { AdminLayout } from '../components/AdminLayout';
 import {
   FileCheck,
   ArrowLeft,
@@ -128,20 +128,18 @@ export const ChallanDetailPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
-        <Header />
-        <div className="flex-1 flex flex-col items-center justify-center p-8 space-y-3">
+      <AdminLayout>
+        <div className="flex-1 flex flex-col items-center justify-center p-8 space-y-3 min-h-[60vh]">
           <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
           <p className="text-xs text-slate-400 font-medium">Loading sales challan details...</p>
         </div>
-      </div>
+      </AdminLayout>
     );
   }
 
   if (error && !challan) {
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
-        <Header />
+      <AdminLayout>
         <main className="flex-1 max-w-3xl w-full mx-auto p-8">
           <div className="bg-slate-900 border border-red-500/30 rounded-2xl p-8 text-center space-y-4">
             <AlertCircle className="w-12 h-12 text-red-400 mx-auto" />
@@ -156,15 +154,13 @@ export const ChallanDetailPage: React.FC = () => {
             </Link>
           </div>
         </main>
-      </div>
+      </AdminLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
-      <Header />
-
-      <main className="flex-1 max-w-5xl w-full mx-auto p-6 space-y-6">
+    <AdminLayout>
+      <main className="max-w-5xl w-full mx-auto p-6 space-y-6">
         {/* Header Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
           <div className="flex items-center space-x-4">
@@ -358,6 +354,6 @@ export const ChallanDetailPage: React.FC = () => {
           </div>
         </div>
       </main>
-    </div>
+    </AdminLayout>
   );
 };

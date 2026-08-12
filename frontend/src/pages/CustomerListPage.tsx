@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { customerService } from '../services/customer.service';
 import { Customer, CustomerPagination } from '../types/customer';
 import { useAuth } from '../context/AuthContext';
-import { Header } from '../components/Header';
+import { AdminLayout } from '../components/AdminLayout';
 import {
   Users,
   UserPlus,
@@ -84,10 +84,8 @@ export const CustomerListPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
-      <Header />
-
-      <main className="flex-1 max-w-7xl w-full mx-auto p-6 space-y-6">
+    <AdminLayout>
+      <main className="max-w-7xl w-full mx-auto p-6 space-y-6">
         {/* Top Title & Actions Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl">
           <div className="flex items-center space-x-3">
@@ -267,6 +265,6 @@ export const CustomerListPage: React.FC = () => {
           )}
         </div>
       </main>
-    </div>
+    </AdminLayout>
   );
 };
