@@ -10,6 +10,9 @@ import { CustomerDetailPage } from './pages/CustomerDetailPage';
 import { ProductListPage } from './pages/ProductListPage';
 import { ProductFormPage } from './pages/ProductFormPage';
 import { InventoryPage } from './pages/InventoryPage';
+import { ChallanListPage } from './pages/ChallanListPage';
+import { CreateChallanPage } from './pages/CreateChallanPage';
+import { ChallanDetailPage } from './pages/ChallanDetailPage';
 
 export default function App() {
   return (
@@ -34,6 +37,11 @@ export default function App() {
             <Route path="/products/new" element={<ProductFormPage />} />
             <Route path="/products/:id/edit" element={<ProductFormPage />} />
             <Route path="/inventory" element={<InventoryPage />} />
+
+            {/* Sales Challan Routes */}
+            <Route path="/challans" element={<ChallanListPage />} />
+            <Route path="/challans/new" element={<CreateChallanPage />} />
+            <Route path="/challans/:id" element={<ChallanDetailPage />} />
           </Route>
 
           {/* Fallback Route */}
